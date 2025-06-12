@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900");
+
+:root {
+  font-size: 18px;
+  /* size */
+  --size-xxs: 0.25rem;
+  --size-xs: 0.5rem;
+  --size-s: 0.75rem;
+  --size-m: 1rem;
+  --size-l: 1.25rem;
+  --size-xl: 1.5rem;
+  --size-xxl: 2.5rem;
+  --size-3xl: 3.75rem;
+  --size-4xl: 6.25rem;
+  --size-5xl: 10rem;
+  --size-6xl: 15rem;
+  /* color */
+  --color-red: #e87d89;
+  --color-orange: #e8a67d;
+  --color-yellow: #e8dc7d;
+  --color-mint: #bfe87d;
+  --color-green: #89e87d;
+  --color-teal: #7de8a6;
+  --color-aqua: #7de8dc;
+  --color-blue: #7dbfe8;
+  --color-azure: #7d89e8;
+  --color-purple: #a67de8;
+  --color-magenta: #dc7de8;
+  --color-bg-main: #1a1a1a;
+  --color-bg-raised: #262626;
+  --color-fg-main: #e6e6e6;
+  --color-fg-dim: #b2b2b2;
+  --color-accent: var(--color-blue);
+  --color-action: var(--color-green);
+  --color-interest: var(--color-magenta);
+  --color-shadow: #111;
+  /* weight */
+  --weight-bold: 500;
+  --weight-light: 200;
+  --weight-normal: 325;
+  /* misc */
+  --shadow: var(--size-xxs) var(--size-xxs) var(--size-xxs) var(--color-shadow);
+  --radius: var(--size-xxs);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-optical-sizing: auto;
+}
+
+html {
+  background-color: var(--color-bg-main);
+  color: var(--color-fg-main);
+  font-family: "Source Sans 3", sans-serif;
+  font-weight: var(--weight-normal);
+}
