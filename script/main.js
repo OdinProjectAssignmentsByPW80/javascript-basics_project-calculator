@@ -10,3 +10,5 @@
 "use strict";
 
 console.log("main.js properly linked");
+
+// max characters in calc display: 10

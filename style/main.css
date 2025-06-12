@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900");
 
+@font-face {
+  font-family: calcFont;
+  src: url(/fonts/Digital7Mono-Yz9J4.ttf);
+}
+
 :root {
   font-size: 18px;
   /* size */
@@ -44,14 +49,85 @@
 }
 
 * {
+  /* typography */
+  font-optical-sizing: auto;
+  /* box-model */
   padding: 0;
   margin: 0;
-  font-optical-sizing: auto;
 }
 
 html {
+  /* typography */
   background-color: var(--color-bg-main);
   color: var(--color-fg-main);
   font-family: "Source Sans 3", sans-serif;
   font-weight: var(--weight-normal);
+}
+
+#calc {
+  /* typography */
+  background-color: var(--color-blue);
+  /* box-model */
+  box-shadow: 0 var(--size-m) 0 var(--color-azure);
+  border-radius: var(--radius);
+  margin: 35% auto 0 auto;
+  padding: var(--size-xl);
+  width: fit-content;
+}
+
+#display {
+  /* typography */
+  background-color: var(--color-mint);
+  color: var(--color-bg-main);
+  /* box-model */
+  border-top: solid var(--size-xxs) var(--color-green);
+  height: var(--size-3xl);
+  margin-bottom: var(--size-xl);
+  width: calc(4 * var(--size-xxl) + 3 * var(--size-m));
+  /* layout */
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+#display-text {
+  font-family: calcFont;
+  font-size: var(--size-xxl);
+  margin: var(--size-xs);
+}
+
+#keypad {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--size-m);
+  width: calc(4 * var(--size-xxl) + 3 * var(--size-m));
+}
+
+.key {
+  /* typography */
+  background-color: var(--color-fg-main);
+  color: var(--color-bg-main);
+  font-size: var(--size-xl);
+  font-weight: var(--weight-bold);
+  /* box-model */
+  border-radius: var(--radius);
+  box-shadow: 0 var(--size-xxs) 0 var(--color-fg-dim);
+  height: var(--size-xxl);
+  width: var(--size-xxl);
+  /* layout */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.key:active {
+  /* box-model */
+  box-shadow: none;
+  /* layout */
+  position: relative;
+  top: var(--size-xxs);
+}
+
+.spacer {
+  visibility: hidden;
 }
