@@ -1,0 +1,50 @@
+.txt.s {
+  font-size: var(--size-s);
+  line-height: 2em;
+}
+
+.txt.m {
+  font-size: var(--size-m);
+  line-height: 1.74em;
+}
+
+.txt.l {
+  font-size: var(--size-l);
+  line-height: 1.5em;
+}
+
+.txt.xl {
+  font-size: var(--size-xl);
+  line-height: 1.25em;
+}
+
+.txt.xxl {
+  font-size: var(--size-xxl);
+  line-height: 1.17em;
+}
+
+.txt.threeXL {
+  font-size: var(--size-3xl);
+  line-height: 1.1em;
+}
+
+.txt.italic {
+  font-style: italic;
+  font-weight: 200;
+}
+
+.txt.light {
+  font-weight: 200;
+}
+
+.txt.bold {
+  font-weight: 500;
+}
+
+.txt.caps {
+  text-transform: uppercase;
+}
+
+.txt.center {
+  text-align: center;
+}

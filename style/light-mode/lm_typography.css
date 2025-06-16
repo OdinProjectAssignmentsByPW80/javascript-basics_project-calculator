@@ -1,0 +1,31 @@
+.light {
+  background-color: var(--col-light);
+  color: var(--col-darkest);
+}
+
+.light.raised {
+  background-color: var(--col-lightest);
+}
+
+.light.txt.dimmed {
+  color: var(--col-dark-mid);
+}
+
+.light.txt.greyed {
+  color: var(--col-light-mid);
+}
+
+#bg-image > .light {
+  width: inherit;
+  height: inherit;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.light.active:hover {
+  background-color: var(--col-dark-mid);
+  color: var(--col-light);
+}
+
+.light a {
+  color: var(--col-component);
+}

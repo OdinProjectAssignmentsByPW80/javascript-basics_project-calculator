@@ -1,14 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" id="svg41147" width="32" height="32" version="1.1">
 <style type="text/css">
-    <!-- @media (prefers-color-scheme:light){#path404032-1,#path404105-9{fill:1a1a1a}} -->
     @media (prefers-color-scheme: light) {
         path {
-            fill: #1a1a1a;
+            fill: black;
         }
     }
     @media (prefers-color-scheme: dark) {
         path {
-            fill: #e6e6e6;
+            fill: white;
         }
     }
 </style>

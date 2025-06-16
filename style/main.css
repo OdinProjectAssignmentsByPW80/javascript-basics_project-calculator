@@ -1,4 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
+@import url(./dark-mode/dm-main.css);
+@import url(./light-mode/lm-main.css);
+@import url(typography.css);
+@import url(./sections/nav.css);
+@import url(./sections/page.css);
+@import url(./sections/calc.css);
 
 @font-face {
   font-family: calcFont;
@@ -20,114 +27,80 @@
   --size-5xl: 10rem;
   --size-6xl: 15rem;
   /* color */
-  --color-red: #e87d89;
-  --color-orange: #e8a67d;
-  --color-yellow: #e8dc7d;
-  --color-mint: #bfe87d;
-  --color-green: #89e87d;
-  --color-teal: #7de8a6;
-  --color-aqua: #7de8dc;
-  --color-blue: #7dbfe8;
-  --color-azure: #7d89e8;
-  --color-purple: #a67de8;
-  --color-magenta: #dc7de8;
-  --color-bg-main: #1a1a1a;
-  --color-bg-raised: #262626;
-  --color-fg-main: #e6e6e6;
-  --color-fg-dim: #b2b2b2;
-  --color-accent: var(--color-blue);
-  --color-action: var(--color-green);
-  --color-interest: var(--color-magenta);
-  --color-shadow: #111;
-  /* weight */
-  --weight-bold: 500;
+  --col-darkest: black;
+  --col-dark: #0a2743;
+  --col-dark-mid: #35526e;
+  --col-light-mid: #c6daeb;
+  --col-light: #ebf0f5;
+  --col-lightest: white;
+  --col-action: #10eeac;
+  --col-component: #2272be;
+  /* typography */
   --weight-light: 200;
   --weight-normal: 325;
-  /* misc */
-  --shadow: var(--size-xxs) var(--size-xxs) var(--size-xxs) var(--color-shadow);
-  --radius: var(--size-xxs);
+  --weight-bold: 500;
 }
 
 * {
-  /* typography */
-  font-optical-sizing: auto;
-  /* box-model */
   padding: 0;
   margin: 0;
+  font-optical-sizing: auto;
+  text-decoration: none;
 }
 
 html {
-  /* typography */
-  background-color: var(--color-bg-main);
-  color: var(--color-fg-main);
   font-family: "Source Sans 3", sans-serif;
   font-weight: var(--weight-normal);
 }
 
-#calc {
-  /* typography */
-  background-color: var(--color-blue);
-  /* box-model */
-  box-shadow: 0 var(--size-m) 0 var(--color-azure);
-  border-radius: var(--radius);
-  margin: 35% auto 0 auto;
-  padding: var(--size-xl);
-  width: fit-content;
+#bg-image {
+  position: fixed;
+  top: -5vh;
+  left: -5vw;
+  width: 110vw;
+  height: 110vh;
+  background-image: url(../img/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(var(--size-l));
+  z-index: -2;
 }
 
-#display {
-  /* typography */
-  background-color: var(--color-mint);
-  color: var(--color-bg-main);
-  /* box-model */
-  border-top: solid var(--size-xxs) var(--color-green);
-  height: var(--size-3xl);
-  margin-bottom: var(--size-xl);
-  width: calc(4 * var(--size-xxl) + 3 * var(--size-m));
-  /* layout */
-  display: flex;
-  align-items: center;
-  justify-content: end;
+.action {
+  background-color: var(--col-action);
+  color: var(--col-darkest);
 }
 
-#display-text {
-  font-family: calcFont;
-  font-size: var(--size-xxl);
-  margin: var(--size-xs);
+.component {
+  background-color: var(--col-component);
+  color: var(--col-lightest);
+  font-size: min(var(--size-xl));
 }
 
-#keypad {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--size-m);
-  width: calc(4 * var(--size-xxl) + 3 * var(--size-m));
+.active {
+  cursor: pointer;
+  border-radius: var(--size-xs);
 }
 
-.key {
-  /* typography */
-  background-color: var(--color-fg-main);
-  color: var(--color-bg-main);
-  font-size: var(--size-xl);
+a {
   font-weight: var(--weight-bold);
-  /* box-model */
-  border-radius: var(--radius);
-  box-shadow: 0 var(--size-xxs) 0 var(--color-fg-dim);
-  height: var(--size-xxl);
-  width: var(--size-xxl);
-  /* layout */
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-.key:active {
-  /* box-model */
-  box-shadow: none;
-  /* layout */
-  position: relative;
-  top: var(--size-xxs);
+a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
 }
 
-.spacer {
-  visibility: hidden;
+h1 {
+  font-size: var(--size-3xl);
+  margin-bottom: var(--size-xl);
+}
+
+p {
+  margin-bottom: var(--size-m);
+}
+
+hr {
+  margin: var(--size-3xl) 0;
+  border-style: solid;
 }

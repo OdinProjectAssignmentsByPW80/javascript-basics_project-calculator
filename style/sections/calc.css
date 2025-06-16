@@ -1,0 +1,33 @@
+#calc {
+  margin: var(--size-xxl) auto;
+  width: fit-content;
+  padding: var(--size-xl);
+  border-radius: var(--size-l);
+}
+
+#display {
+  font-family: calcFont;
+  width: calc(4 * var(--size-xxl) + 3 * var(--size-m));
+  text-align: right;
+  box-sizing: border-box;
+  padding: 0 var(--size-s);
+  margin-bottom: var(--size-xl);
+  width: calc(4 * var(--size-3xl) + 3 * var(--size-l));
+}
+
+#keypad {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--size-l);
+  width: calc(4 * var(--size-3xl) + 3 * var(--size-l));
+}
+
+.key {
+  font-size: var(--size-xxl);
+  width: var(--size-3xl);
+  aspect-ratio: 1 / 1;
+  display: flex;
+  border-radius: var(--size-xs);
+  justify-content: center;
+  align-items: center;
+}
