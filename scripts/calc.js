@@ -22,8 +22,8 @@ const display = (function () {
       el.textContent = "0";
     },
     append(num) {
-      console.log(el);
-      if (el.textContent == "0") el.textContent = num;
+      if (num == "." && el.textContent.includes(".")) return;
+      if (el.textContent == "0" && num != ".") el.textContent = num;
       else el.textContent += num;
     },
     backSpace() {
