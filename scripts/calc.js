@@ -30,27 +30,65 @@ const display = (function () {
       if (el.textContent.length == 1) el.textContent = 0;
       else el.textContent = el.textContent.slice(0, -1);
     },
+    get value() {
+      return +el.textContent;
+    },
   };
 })();
 
 let result = false;
+let operand1 = 0;
+let operand2 = 0;
+let pendingOperation = "none";
 
 function processNumInput(num) {
   if (result) {
     display.clear();
     // todo: perform operation - possibly somewhere else
-    result = false;
   }
+  result = false;
   display.append(num);
 }
 
+const performOp = {
+  divide: (x, y) => (y == 0 ? 0 : x / y),
+  times: (x, y) => x * y,
+  minus: (x, y) => x - y,
+  plus: (x, y) => x + y,
+  none: () => 0,
+};
+
 function processOpInput(op) {
+  if (pendingOperation != "none" || op == "equals") {
+    operand2 = display.value;
+    if (pendingOperation == "divide" && operand2 == 0) {
+      display.clear();
+      display.append("Err");
+    } else {
+      operand1 = performOp[pendingOperation](operand1, operand2);
+      display.clear();
+      display.append(operand1);
+      pendingOperation = op;
+    }
+  } else {
+    pendingOperation = op;
+    operand1 = display.value;
+  }
   result = true;
-  console.log("Operation pressed:", op);
 }
 
 function cancel() {
   display.clear();
   result = false;
-  // todo: reset any other variables that are created
+  operand1 = 0;
+  operand2 = 0;
+  pendingOperation = "none";
 }
+
+/*
+  todo: display overflow
+  todo: fix after equals
+  todo: fix only last operation pressed should be used
+  todo: ops should probably be an obj (like enum)
+  todo: see about objectify calc like display
+*/
