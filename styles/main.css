@@ -8,6 +8,7 @@
 /* sections */
 @import url(./sections/nav.css);
 @import url(./sections/content.css);
+@import url(./sections/calc.css);
 /* #endregion */
 
 /* #region VARIABLES */

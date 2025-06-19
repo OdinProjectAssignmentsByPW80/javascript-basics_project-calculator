@@ -1,0 +1,63 @@
+@font-face {
+  font-family: calcDisplay;
+  src: url(../../fonts/Digital7Mono-Yz9J4.ttf);
+}
+
+#calc-container {
+  /* box model */
+  height: 70%;
+  /* positioning */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#calc {
+  /* typography */
+  background-color: var(--accent);
+  /* box model */
+  width: fit-content;
+}
+
+#display {
+  /* typography */
+  background-color: var(--bgc);
+  font-family: calcDisplay;
+  font-size: var(--size-xxl);
+  text-align: right;
+  /* box model */
+  margin-bottom: var(--size-m);
+  padding: var(--size-xxs);
+}
+
+#num-pad {
+  /* box model */
+  width: calc(4 * var(--size-xxl) + 3 * var(--size-m));
+  /* positioning */
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--size-m);
+}
+
+.btn {
+  /* typography */
+  background-color: var(--bgc);
+  font-size: var(--size-xl);
+  /* box model */
+  border-radius: 0.25em;
+  height: var(--size-xxl);
+  width: var(--size-xxl);
+  /* positioning */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn:hover {
+  background-color: var(--blue);
+  color: var(--bgc);
+}
+
+.spacer {
+  background-color: transparent;
+}
