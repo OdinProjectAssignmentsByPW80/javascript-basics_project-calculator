@@ -15,20 +15,23 @@ buttons.forEach((el) =>
   })
 );
 
-const display = {
-  el: document.querySelector("#display"),
-  clear() {
-    this.el.textContent = "0";
-  },
-  append(num) {
-    if (this.el.textContent == "0") this.el.textContent = num;
-    else this.el.textContent += num;
-  },
-  backSpace() {
-    if (this.el.textContent.length == 1) this.el.textContent = 0;
-    else this.el.textContent = this.el.textContent.slice(0, -1);
-  },
-};
+const display = (function () {
+  const el = document.querySelector("#display");
+  return {
+    clear() {
+      el.textContent = "0";
+    },
+    append(num) {
+      console.log(el);
+      if (el.textContent == "0") el.textContent = num;
+      else el.textContent += num;
+    },
+    backSpace() {
+      if (el.textContent.length == 1) el.textContent = 0;
+      else el.textContent = el.textContent.slice(0, -1);
+    },
+  };
+})();
 
 let result = false;
 
