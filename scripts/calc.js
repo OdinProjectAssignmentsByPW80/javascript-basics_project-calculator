@@ -1,7 +1,6 @@
 "use strict";
 
 const buttons = document.querySelectorAll(".btn");
-const display = document.querySelector("#display");
 
 buttons.forEach((el) =>
   el.addEventListener("click", (event) => {
@@ -12,28 +11,34 @@ buttons.forEach((el) =>
       processOpInput(event.target.id);
     }
     if (event.target.id == "cancel") cancel();
-    if (event.target.id == "back-space") backSpace();
+    if (event.target.id == "back-space") display.backSpace();
   })
 );
+
+const display = {
+  el: document.querySelector("#display"),
+  clear() {
+    this.el.textContent = "0";
+  },
+  append(num) {
+    if (this.el.textContent == "0") this.el.textContent = num;
+    else this.el.textContent += num;
+  },
+  backSpace() {
+    if (this.el.textContent.length == 1) this.el.textContent = 0;
+    else this.el.textContent = this.el.textContent.slice(0, -1);
+  },
+};
 
 let result = false;
 
 function processNumInput(num) {
   if (result) {
-    clearDisplay();
+    display.clear();
     // todo: perform operation - possibly somewhere else
     result = false;
   }
-  appendDisplay(num);
-}
-
-function clearDisplay() {
-  display.textContent = "0";
-}
-
-function appendDisplay(num) {
-  if (display.textContent == "0") display.textContent = num;
-  else display.textContent += num;
+  display.append(num);
 }
 
 function processOpInput(op) {
@@ -42,12 +47,7 @@ function processOpInput(op) {
 }
 
 function cancel() {
-  clearDisplay();
+  display.clear();
   result = false;
   // todo: reset any other variables that are created
-}
-
-function backSpace() {
-  if (display.textContent.length == 1) display.textContent = 0;
-  else display.textContent = display.textContent.slice(0, -1);
 }
