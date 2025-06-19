@@ -1,0 +1,84 @@
+header {
+  /* box model */
+  box-sizing: border-box;
+  padding: var(--size-s) calc(50% - 500px);
+  width: 100%;
+  /* positioning */
+  display: flex;
+  justify-content: space-between;
+}
+
+/* #region LOGO */
+#logo {
+  /* box model */
+  height: var(--size-xxl);
+  /* positioning */
+  align-self: center;
+}
+
+#logo svg {
+  height: var(--size-xxl);
+}
+
+path#outer {
+  fill: var(--accent);
+}
+
+path#inner {
+  fill: var(--action);
+}
+/* #endregion */
+
+/* #region NAV */
+nav {
+  display: flex;
+  align-items: center;
+}
+
+nav > ul {
+  /* typography */
+  list-style-type: none;
+  /* positioning */
+  display: flex;
+  gap: var(--size-xl);
+}
+
+nav li {
+  border-radius: var(--size-xxs);
+  padding: 0 var(--size-xxs);
+}
+
+nav li:hover {
+  background-color: var(--accent);
+  color: var(--bgc);
+}
+
+nav a {
+  border-bottom: unset;
+  color: inherit;
+}
+/* #endregion */
+
+/* #region MODE */
+#mode-toggle {
+  /* box model */
+  border-radius: var(--size-xxs);
+  height: var(--size-xl);
+  padding: var(--size-xxs);
+  /* positioning */
+  align-self: center;
+}
+
+#mode-toggle:hover {
+  /* typography */
+  background-color: var(--accent);
+  color: var(--bgc);
+  /* misc */
+  cursor: pointer;
+}
+
+.material-symbols-outlined {
+  font-size: var(--size-xl);
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+/* #endregion */

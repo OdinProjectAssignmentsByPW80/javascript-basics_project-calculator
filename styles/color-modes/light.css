@@ -1,0 +1,12 @@
+.light-mode {
+  --bgc: #f5f5f5;
+  --fgc: black;
+  --accent: #2d4ba6;
+  --action: hsl(from var(--accent) calc(h + 240) 100 calc(l - 10));
+  --red: hsl(from var(--accent) calc(h + 120) 50 calc(l + 2));
+  --green: hsl(from var(--accent) calc(h + 240) 50 calc(l - 16));
+  --blue: hsl(from var(--accent) h 50 calc(l + 17));
+  --raise: brightness(1.05);
+  color: var(--fgc);
+  background-color: var(--bgc);
+}

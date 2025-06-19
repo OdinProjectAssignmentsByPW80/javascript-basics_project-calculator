@@ -5,83 +5,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project: Calculator</title>
-    <link rel="icon" type="image/x-icon" href="./img/ico.svg">
+    <link rel="icon" href="./img/ico.svg" type="image/svg+xml">
 
-    <link rel="stylesheet" href="./style/main.css">
+    <link rel="stylesheet" href="./styles/main.css">
 </head>
 
-<body>
+<body class="dark-mode">
 
-    <div id="bg-image">
-        <div class="dark"></div>
-    </div>
-
-    <header class="dark">
+    <header>
         <div id="logo">
             <svg width="100%" height="100%" viewBox="0 0 32 32" preserveAspectRatio="xMidYMid meet">
-                <path id="path404032-1"
+                <path id="outer"
                     d="M16.012 1.976 4.025 8.982v14.012l11.987 7.005L28 22.994V8.982Zm0 4.284 8.321 4.864v9.728l-8.32 4.863-8.322-4.863v-9.728z" />
-                <path id="path404105-9" d="m20.643 13.281-4.63-2.707-4.632 2.707 4.631 2.707V21.4l4.63-2.706z" />
+                <path id="inner" d="m20.643 13.281-4.63-2.707-4.632 2.707 4.631 2.707V21.4l4.63-2.706z" />
             </svg>
         </div>
 
         <!-- <nav>
             <ul>
-                <li><a href="#" class="dark txt greyed bold">link</a></li>
-                <li><a href="#" class="dark txt dimmed bold active">link</a></li>
-                <li><a href="#" class="dark txt dimmed bold active">link</a></li>
+                <li class="inactive"><a href="#" class="txt bold l">link</a></li>
+                <li><a href="./simple.html" class="txt bold l">Simple</a></li>
+                <li><a href="#" class="txt bold l">link</a></li>
             </ul>
         </nav> -->
 
-        <div id="mode-toggle" class="dark txt dimmed active">
+        <div id="mode-toggle">
             <span class="material-symbols-outlined">dark_mode</span>
         </div>
     </header>
 
-    <div id="page" class="dark">
+    <hr>
+
+    <div id="content">
+
         <h1>Project: Calculator</h1>
-
-        <p>A project to build a basic calculator gui that works in the browser.</p>
-
-        <p>
-            Completed as part of the <span class="txt bold">JavaScript Basics</span> section of the
-            <span class="txt bold">Foundation Course</span> at
-            <a href="https://www.theodinproject.com">The Odin Project</a>.
+        <p>A project to build a basic calculator GUI that works in the browser.</p>
+        <p>Completed as part of the <span class="bold">JavaScript Basics</span> section of the <span
+                class="bold">Foundation Course</span> at <a href="https://www.theodinproject.com">TheOdinProject</a>.
         </p>
+        <p>The source code repository can be found on <a
+                href="https://github.com/OdinProjectAssignmentsByPW80/javascript-basics_project-calculator">GitHub <svg
+                    xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 64 64">
+                    <path
+                        d="M32 6C17.641 6 6 17.641 6 32c0 12.277 8.512 22.56 19.955 25.286-.592-.141-1.179-.299-1.755-.479V50.85c0 0-.975.325-2.275.325-3.637 0-5.148-3.245-5.525-4.875-.229-.993-.827-1.934-1.469-2.509-.767-.684-1.126-.686-1.131-.92-.01-.491.658-.471.975-.471 1.625 0 2.857 1.729 3.429 2.623 1.417 2.207 2.938 2.577 3.721 2.577.975 0 1.817-.146 2.397-.426.268-1.888 1.108-3.57 2.478-4.774-6.097-1.219-10.4-4.716-10.4-10.4 0-2.928 1.175-5.619 3.133-7.792C19.333 23.641 19 22.494 19 20.625c0-1.235.086-2.751.65-4.225 0 0 3.708.026 7.205 3.338C28.469 19.268 30.196 19 32 19s3.531.268 5.145.738c3.497-3.312 7.205-3.338 7.205-3.338.567 1.474.65 2.99.65 4.225 0 2.015-.268 3.19-.432 3.697C46.466 26.475 47.6 29.124 47.6 32c0 5.684-4.303 9.181-10.4 10.4 1.628 1.43 2.6 3.513 2.6 5.85v8.557c-.576.181-1.162.338-1.755.479C49.488 54.56 58 44.277 58 32 58 17.641 46.359 6 32 6zM33.813 57.93C33.214 57.972 32.61 58 32 58 32.61 58 33.213 57.971 33.813 57.93zM37.786 57.346c-1.164.265-2.357.451-3.575.554C35.429 57.797 36.622 57.61 37.786 57.346zM32 58c-.61 0-1.214-.028-1.813-.07C30.787 57.971 31.39 58 32 58zM29.788 57.9c-1.217-.103-2.411-.289-3.574-.554C27.378 57.61 28.571 57.797 29.788 57.9z">
+                    </path>
+                </svg></a>.
+        </p>
+        <br>
+        <hr class="dim">
 
-        <hr class="dark">
-
-        <div id="calc" class="dark raised">
-            <div id="display" class="dark">
-                <div id="display-text" class="txt threeXL">0005318008</div>
-            </div>
-            <div id="keypad">
-                <div id="cancel" class="dark active key">C</div>
-                <div id="back-space" class="dark active key">⬅</div>
-                <div class="key spacer"></div>
-                <div id="divide" class="dark active key">&divide;</div>
-                <div id="nine" class="dark active key">9</div>
-                <div id="eight" class="dark active key">8</div>
-                <div id="seven" class="dark active key">7</div>
-                <div id="times" class="dark active key">&times;</div>
-                <div id="six" class="dark active key">6</div>
-                <div id="five" class="dark active key">5</div>
-                <div id="four" class="dark active key">4</div>
-                <div id="minus" class="dark active key">&minus;</div>
-                <div id="three" class="dark active key">3</div>
-                <div id="two" class="dark active key">2</div>
-                <div id="one" class="dark active key">1</div>
-                <div id="plus" class="dark active key">&plus;</div>
-                <div class="key spacer"></div>
-                <div id="zero" class="dark active key">0</div>
-                <div id="point" class="dark active key">&centerdot;</div>
-                <div id="equals" class="dark active key">&equals;</div>
-            </div>
-        </div>
     </div>
 
+    <footer class="center thin txt-s dim">
+        &copy; 2025
+    </footer>
+
+
     <script src="./scripts/color_mode.js"></script>
-    <script src="./scripts/main.js"></script>
 
 </body>
 

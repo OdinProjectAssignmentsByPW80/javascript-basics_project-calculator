@@ -1,0 +1,12 @@
+.dark-mode {
+  --bgc: black;
+  --fgc: white;
+  --action: #26ff5a;
+  --accent: hsl(from var(--action) calc(h + 60) s l);
+  --red: hsl(from var(--action) calc(h + 180) s calc(l * 1.5));
+  --green: hsl(from var(--action) h s calc(l * 1.5));
+  --blue: hsl(from var(--action) calc(h + 60) s calc(l * 1.5));
+  --raise: invert(1) brightness(0.05);
+  color: var(--fgc);
+  background-color: var(--bgc);
+}

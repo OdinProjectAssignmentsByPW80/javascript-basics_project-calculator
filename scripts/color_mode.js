@@ -1,14 +1,4 @@
 /**
- * @file color_mode.js
- * @author Paul Williams <advanced_solution_delivery@outlook.com>
- * @version 0.12.03
- * @date 2025-06-16
- * @summary Handles switching between light and dark mode display. Updates to
- * user preference on page load and on preference change; and, allows user to
- * manually switch on click.
- */
-
-/**
  * @typedef {Object} Modes
  * @property {string} light - Represents the light mode.
  * @property {string} dark - Represents the dark mode.
@@ -159,7 +149,9 @@ function updateCurrentScheme(pref) {
 function setColorScheme(scheme) {
   // Determine which classes to remove and add based on the scheme.
   let [remove, add] =
-    scheme == "dark_mode" ? ["light", "dark"] : ["dark", "light"];
+    scheme == "dark_mode"
+      ? ["light-mode", "dark-mode"]
+      : ["dark-mode", "light-mode"];
 
   // Select all elements that currently have the 'remove' class.
   const elements = document.querySelectorAll("." + remove);

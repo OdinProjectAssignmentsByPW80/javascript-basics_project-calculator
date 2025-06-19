@@ -1,9 +1,0 @@
-#page {
-  width: 1000px;
-  height: fit-content;
-  min-height: calc(100vh - 4 * var(--size-s) - 3 * var(--size-xl));
-  margin: var(--size-xl) auto;
-  border-radius: var(--size-l);
-  padding: var(--size-3xl);
-  box-sizing: border-box;
-}

@@ -1,0 +1,114 @@
+/* #region IMPORTS */
+/* font */
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
+/* color modes */
+@import url(./color-modes/dark.css);
+@import url(./color-modes/light.css);
+/* sections */
+@import url(./sections/nav.css);
+@import url(./sections/content.css);
+/* #endregion */
+
+/* #region VARIABLES */
+:root {
+  font-size: 16pt;
+  /* size */
+  --size-xxs: 0.25rem;
+  --size-xs: 0.5rem;
+  --size-s: 0.75rem;
+  --size-m: 1rem;
+  --size-l: 1.25rem;
+  --size-xl: 1.5rem;
+  --size-xxl: 2.5rem;
+  --size-3xl: 3.75rem;
+  --size-4xl: 6.25rem;
+  --size-5xl: 10rem;
+  --size-6xl: 15rem;
+  /* typography */
+  --weight-thin: 300;
+  --weight-normal: 500;
+  --weight-bold: 700;
+  --weight-bolder: 900;
+  /* misc */
+  --grey-out: 35%;
+  --dim-txt: 67%;
+}
+/* #endregion */
+
+/* #region RESET */
+* {
+  /* typography */
+  font-optical-sizing: auto;
+  font-weight: var(--weight-normal);
+  text-decoration: none;
+  /* box model */
+  margin: 0;
+  padding: 0;
+}
+/* #endregion */
+
+/* #region LAYOUT */
+html {
+  /* typography */
+  font-family: "Source Sans 3", sans-serif;
+  font-weight: var(--weight-normal);
+  /* box model */
+  height: 100vh;
+}
+
+body {
+  /* box model */
+  height: 100%;
+  /* portioning */
+  display: flex;
+  flex-direction: column;
+}
+/* #endregion */
+
+/* #region COMPONENTS */
+button {
+  /* typography */
+  background: var(--action);
+  color: var(--bgc);
+  font-size: var(--size--medium);
+  font-weight: var(--weight-bold);
+  /* box model */
+  border-radius: var(--size-xxs);
+  border: none;
+  margin: var(--size-m);
+  padding: var(--size-xxs) var(--size-xs);
+  /* misc */
+  cursor: pointer;
+}
+
+button:active {
+  opacity: var(--grey-out);
+}
+/* #endregion */
+
+/* #region COLOuRS */
+.red {
+  background-color: var(--red);
+  color: var(--bgc);
+}
+
+.green {
+  background-color: var(--green);
+  color: var(--bgc);
+}
+
+.blue {
+  background-color: var(--blue);
+  color: var(--bgc);
+}
+/* #endregion */
+
+a svg {
+  height: 1em;
+  width: 1em;
+  transform: translateY(0.15em);
+}
+a svg path {
+  fill: var(--accent);
+}
