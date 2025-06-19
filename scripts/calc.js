@@ -1,6 +1,7 @@
 "use strict";
 
 const buttons = document.querySelectorAll(".btn");
+const display = document.querySelector("#display");
 
 buttons.forEach((el) =>
   el.addEventListener("click", (event) => {
@@ -15,18 +16,39 @@ buttons.forEach((el) =>
   })
 );
 
+let result = false;
+
 function processNumInput(num) {
-  console.log("Number pressed:", num);
+  if (result) {
+    clearDisplay();
+    // other things
+    result = false;
+  }
+  appendDisplay(num);
+}
+
+function clearDisplay() {
+  display.textContent = "0";
+}
+
+function appendDisplay(num) {
+  if (display.textContent == "0") display.textContent = num;
+  else display.textContent += num;
 }
 
 function processOpInput(op) {
+  result = true;
   console.log("Operation pressed:", op);
 }
 
 function cancel() {
-  console.log("Cancel pressed");
+  clearDisplay();
+  result = false;
 }
 
 function backSpace() {
   console.log("Backspace pressed");
 }
+
+// clear display
+// append display
