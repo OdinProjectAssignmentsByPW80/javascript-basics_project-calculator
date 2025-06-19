@@ -21,7 +21,7 @@ let result = false;
 function processNumInput(num) {
   if (result) {
     clearDisplay();
-    // other things
+    // todo: perform operation - possibly somewhere else
     result = false;
   }
   appendDisplay(num);
@@ -44,11 +44,10 @@ function processOpInput(op) {
 function cancel() {
   clearDisplay();
   result = false;
+  // todo: reset any other variables that are created
 }
 
 function backSpace() {
-  console.log("Backspace pressed");
+  if (display.textContent.length == 1) display.textContent = 0;
+  else display.textContent = display.textContent.slice(0, -1);
 }
-
-// clear display
-// append display
