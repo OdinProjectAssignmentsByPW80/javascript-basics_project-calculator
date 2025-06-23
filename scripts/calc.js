@@ -39,9 +39,9 @@ const display = (function () {
 
 const Ops = {
   divide: (x, y) => (y == 0 ? "Err" : x / y),
-  times: (x, y) => x * y,
-  minus: (x, y) => x - y,
-  plus: (x, y) => x + y,
+  multiply: (x, y) => x * y,
+  subtract: (x, y) => x - y,
+  add: (x, y) => x + y,
   none: (x, y) => y,
 };
 
@@ -89,16 +89,33 @@ function cancel() {
   display.clear();
 }
 
-/*
-  todo: stop overlong input
-  todo: bonus - keyboard support
-*/
+const keycodes = {
+  num: [
+    "Numpad0",
+    "Numpad1",
+    "Numpad2",
+    "Numpad3",
+    "Numpad4",
+    "Numpad5",
+    "Numpad6",
+    "Numpad7",
+    "Numpad8",
+    "Numpad9",
+    "NumpadDecimal",
+  ],
+  op: ["NumpadDivide", "NumpadSubtract", "NumpadMultiply", "NumpadAdd"],
+};
 
 document.addEventListener("keydown", (event) => {
-  console.log(event.key, event.code);
-  switch (event.code) {
-    case "Numpad1":
-      processNumInput(1);
-      break;
+  if (keycodes.num.includes(event.code)) processNumInput(event.key);
+  if (keycodes.op.includes(event.code)) {
+    processOpInput(event.code.slice(6).toLowerCase());
   }
+  if (event.code == "NumpadEnter") equals();
+  if (event.code == "Backspace") display.backSpace();
+  if (event.code == "Escape") cancel();
 });
+
+/*
+  todo: stop overlong input
+*/
