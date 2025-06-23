@@ -38,31 +38,19 @@ Key functionality from the text:
 
 ## Result
 
-*coming soon*
-<!-- Check out the live interactive demo [here &rArr;](https://odinprojectassignmentsbypw80.github.io/javascript-basics_project-etch-a-sketch/)
-
->[!NOTE]
-> The page does not work properly in Mozilla FireFox (at least not version 139.01 (64-bit), which was up to date at time
-> of writing); although everything seems fine on Google Chrome. This is also respectively true for LibreWolf (using
-> Mozilla's Gecko engine) and Edge (using Google's Blink Engine).
->
-> As best as I can tell it is something to do with the way the height and width of the .pixel divs are being calculated.
-> They report correctly in the console and inspector rules, but they are wrong on screen and in the layout information.
->
-> I will bare this in mind for the future. But, I am not prepared to do a workaround at this point.
+Check out the live interactive demo [here &rArr;](https://odinprojectassignmentsbypw80.github.io/javascript-basics_project-calculator/)
 
 ## Review
 
-Once again fell foul to improper planning, although some aspects were down to a lack of understanding on my part.
+Although the project meets the brief there are still a few outstanding issues:
+1. It is possible for the user to overflow the display by entering more than 11 digits;
+2. The delete button allows the user to modify answers as well as their input;
+3. When evaluating sequential operations (without using the equals button) dividing by zero does not generate an error message. Instead, the zero is ignored and the next operation is performed between the initial number and the subsequent number.
 
-I'm not sure why, but I thought one could edit css directly with JavaScript. In retrospect this is obviously not the
-case - JavaScript interacts with the DOM not the css. It can add classes and styles to elements in the DOM, but this
-does not modify the css directly.
+The second issue is present in the [linked exemplar](https://g-o-t-w.github.io/calculator-app/). Additionally, this example appends input digits to answers after the equals button has been pressed.
 
-The code feels, for want of a better word, 'janky'. The `html` and `css` I let slide as I focused on JavaScript. This is
-going to be a problem for me going forward. I find it difficult to properly focus on all 3 elements one at a time;
-instead either emphasising one to the detriment of the other two or simultaneously editing all three in a somewhat
-chaotic manner.
+This is not a judgment on another student's project but rather a probable indicator for the level of expected outcomes.
 
-I should also probably go back to have another look at the different types of functions; focusing on the benefits and
-limitations for each. -->
+As usual I attempted the problem on my own, rather than allowing myself to be walked through the steps. I implemented my solution as a pair of nested IFEE functions returning objects that contained their own functions as a personal challenge to test my understanding and application of the higher tier concepts at this stage of the program; and to create a level of safety for the variables I created. I must assume this would be easier using JavaScript classes which have not yet been covered.
+
+Also, as usual, my planning and design phase was found somewhat lacking in practice. I can only commit to the process and continue to refine my skills; however, as much as I chafe against it, even my somewhat mediocre planning was of huge benefit after my second revision.
