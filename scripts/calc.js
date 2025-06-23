@@ -10,6 +10,7 @@ buttons.forEach((el) =>
     if (event.target.classList.contains("op")) {
       processOpInput(event.target.id);
     }
+    if (event.target.id == "equals") equals();
     if (event.target.id == "cancel") cancel();
     if (event.target.id == "back-space") display.backSpace();
   })
@@ -36,59 +37,68 @@ const display = (function () {
   };
 })();
 
-let result = false;
-let operand1 = 0;
-let operand2 = 0;
-let pendingOperation = "none";
-
-function processNumInput(num) {
-  if (result) {
-    display.clear();
-    // todo: perform operation - possibly somewhere else
-  }
-  result = false;
-  display.append(num);
-}
-
-const performOp = {
-  divide: (x, y) => (y == 0 ? 0 : x / y),
+const Ops = {
+  divide: (x, y) => (y == 0 ? "Err" : x / y),
   times: (x, y) => x * y,
   minus: (x, y) => x - y,
   plus: (x, y) => x + y,
-  none: () => 0,
+  none: (x, y) => y,
 };
 
+function performOP() {
+  let result = Ops[input[1]](input[0], input[2]);
+  if (String(result).length > 11) result = result.toPrecision(8);
+  const pending = input[3] ? input[3] : "none";
+  display.clear();
+  display.append(result);
+  input = [];
+  input[0] = result == "Err" ? 0 : result;
+  input[1] = pending;
+}
+
+let input = [];
+let index = 0;
+
+function processNumInput(num) {
+  if (input.length % 2 == 0) display.clear();
+  display.append(num);
+  index = input[1] ? 2 : 0;
+  input[index] = display.value;
+}
+
 function processOpInput(op) {
-  if (pendingOperation != "none" || op == "equals") {
-    operand2 = display.value;
-    if (pendingOperation == "divide" && operand2 == 0) {
-      display.clear();
-      display.append("Err");
-    } else {
-      operand1 = performOp[pendingOperation](operand1, operand2);
-      display.clear();
-      display.append(operand1);
-      pendingOperation = op;
-    }
+  index = input[2] ? 3 : 1;
+  input[index] = op;
+  if (input.length == 4) performOP();
+}
+
+function equals() {
+  if (input.length == 3) {
+    performOP();
   } else {
-    pendingOperation = op;
-    operand1 = display.value;
+    display.clear();
+    input.splice(1);
+    if (input[0]) processNumInput(input[0]);
+    else processNumInput(0);
   }
-  result = true;
 }
 
 function cancel() {
+  input = [];
+  index = 0;
   display.clear();
-  result = false;
-  operand1 = 0;
-  operand2 = 0;
-  pendingOperation = "none";
 }
 
 /*
-  todo: display overflow
-  todo: fix after equals
-  todo: fix only last operation pressed should be used
-  todo: ops should probably be an obj (like enum)
-  todo: see about objectify calc like display
+  todo: stop overlong input
+  todo: bonus - keyboard support
 */
+
+document.addEventListener("keydown", (event) => {
+  console.log(event.key, event.code);
+  switch (event.code) {
+    case "Numpad1":
+      processNumInput(1);
+      break;
+  }
+});
