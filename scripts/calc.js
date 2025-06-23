@@ -246,7 +246,8 @@ const calc = (function () {
 })();
 
 /*
-  todo: stop overlong input
+  todo: fix: user can enter overlong input
+  todo: fix: user can delete digits from answers
   todo: fix: x divide 0 then op2 instead of equals does not crash but ignores 0
   todo: and performs op2 on x and next number input.
 */
