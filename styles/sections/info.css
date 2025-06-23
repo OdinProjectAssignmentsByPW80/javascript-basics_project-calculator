@@ -1,0 +1,56 @@
+#controls {
+  /* typography */
+  background-color: var(--bgc);
+  /* box model */
+  height: var(--size-xl);
+  width: var(--size-xl);
+  /* positioning */
+  bottom: var(--size-3xl);
+  position: fixed;
+  right: var(--size-4xl);
+  z-index: 2;
+  /* animation */
+  transition: width 0.5s, height 0.5s;
+  transition-timing-function: ease-in-out;
+}
+
+.info {
+  /* typography */
+  background-color: var(--action);
+  color: var(--bgc);
+  text-transform: lowercase;
+  /* box model */
+  border-radius: 1em;
+  margin-right: 1em;
+  padding: 0 0.6em;
+}
+
+#controls h3 {
+  /* box model */
+  margin-bottom: 1em;
+  /* positioning */
+  display: inline-block;
+}
+
+#controls ul {
+  padding-left: var(--size-m);
+}
+
+#controls :is(p, ul, h3) {
+  opacity: 0;
+}
+
+#controls:hover {
+  /* typography */
+  background-color: var(--raise);
+  /* box model */
+  width: 600px;
+  height: 400px;
+}
+
+#controls:hover :is(p, ul, h3) {
+  opacity: 1;
+  transition: opacity 0.5s;
+  transition-delay: 0.5s;
+  transition-timing-function: ease-in;
+}

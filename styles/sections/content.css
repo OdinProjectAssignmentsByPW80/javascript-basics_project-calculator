@@ -53,7 +53,8 @@ h6 {
 }
 
 h6,
-.txt-m {
+.txt-m,
+p {
   font-size: var(--size-m);
   line-height: 1.74em;
 }
