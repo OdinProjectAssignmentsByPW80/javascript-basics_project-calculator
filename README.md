@@ -27,7 +27,7 @@ Key functionality from the text:
 - consecutive operator presses should not run operations, only the last operation pressed should be used for the next operation
 - clear should wipe existing data not just clear display
 - > When a result is displayed, pressing a new digit should clear the result and start a new calculation instead of appending the digit to the existing result
-- > Your calculator should not evaluate more than a single pair of numbers at a time. Example: you enter a number (`12`), followed by an operator button (`+`), a second number button (`7`), and a second operator button (`-`). Your calculator should then do the following: first, evaluate the initial pair of numbers (`12 + 7`), then display the result of that calculation (`19`). Finally, use that result (`19`) as the first number in a new calculation, along with the next operator (`-`). An example of the behaviour we’re looking for can be seen in this [student’s calculator live preview](https://g-o-t-w.github.io/calculator-app/).
+- > Your calculator should not evaluate more than a single pair of numbers at a time. Example: you enter a number (`12`), followed by an operator button (`+`), a second number button (`7`), and a second operator button (`-`). Your calculator should then do the following: first, evaluate the initial pair of numbers (`12 + 7`), then display the result of that calculation (`19`). Finally, use that result (`19`) as the first number in a new calculation, along with the next operator (`-`). An example of the behaviour we’re looking for can be seen in this <span id="example-link">[student’s calculator live preview](https://g-o-t-w.github.io/calculator-app/)</span>.
 
 ### Extra Credit
 
@@ -47,7 +47,7 @@ Although the project meets the brief there are still a few outstanding issues:
 2. The delete button allows the user to modify answers as well as their input;
 3. When evaluating sequential operations (without using the equals button) dividing by zero does not generate an error message. Instead, the zero is ignored and the next operation is performed between the initial number and the subsequent number.
 
-The second issue is present in the [linked exemplar](https://g-o-t-w.github.io/calculator-app/). Additionally, this example appends input digits to answers after the equals button has been pressed.
+The second issue is present in the linked exemplar ([above](#example-link)). Additionally, this example appends input digits to answers after the equals button has been pressed.
 
 This is not a judgment on another student's project but rather a probable indicator for the level of expected outcomes.
 
